@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Dog Facts</h1>
+        <button id="factButton">Show me a fact!</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            { "fact": "Dogs have been domesticated for over 14,000 years." },
+            { "fact": "There are over 340 different dog breeds worldwide." },
+            { "fact": "Dogs have a sense of smell that is 10,000 to 100,000 times more acute than humans." },
+            { "fact": "The Basenji dog is known as the 'barkless dog' because it doesn't bark like other dogs." },
+            { "fact": "Dogs have three eyelids, including one to keep their eyes moist and protected." },
+            { "fact": "A dog's nose print is unique, much like a human's fingerprint." },
+            { "fact": "The Labrador Retriever has been the most popular dog breed in the United States for over 30 years." },
+            { "fact": "Dogs can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to 20,000 Hz." },
+            { "fact": "The Greyhound is the fastest dog breed and can run up to 45 miles per hour." },
+            { "fact": "Puppies are born blind, deaf, and toothless." }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex].fact;
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
