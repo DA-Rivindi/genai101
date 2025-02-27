@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dog Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f8ff;
+            background-color: #e0f7fa;
             overflow: hidden;
             position: relative;
         }
@@ -22,51 +23,56 @@
             text-align: center;
             max-width: 600px;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             position: relative;
             z-index: 1;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 24px;
+            font-size: 18px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #ff6f61;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #ff3d00;
+            transform: scale(1.05);
         }
 
         .fact-display {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 20px;
             color: #333;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
         }
 
         .fact-display.show {
             opacity: 1;
+            transform: translateY(0);
         }
 
         .dog-image {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             margin-top: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: scale(0.9);
         }
 
         .dog-image.show {
             opacity: 1;
+            transform: scale(1);
         }
 
         .background-animation {
@@ -85,6 +91,21 @@
             from { background-position: 0 0; }
             to { background-position: 100% 100%; }
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .fact-display {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,16 +118,16 @@
     </div>
     <script>
         const facts = [
-            { "fact": "Dogs have been domesticated for over 14,000 years.", "image": "https://placedog.net/300/200?random=1" },
-            { "fact": "There are over 340 different dog breeds worldwide.", "image": "https://placedog.net/300/200?random=2" },
-            { "fact": "Dogs have a sense of smell that is 10,000 to 100,000 times more acute than humans.", "image": "https://placedog.net/300/200?random=3" },
-            { "fact": "The Basenji dog is known as the 'barkless dog' because it doesn't bark like other dogs.", "image": "https://placedog.net/300/200?random=4" },
-            { "fact": "Dogs have three eyelids, including one to keep their eyes moist and protected.", "image": "https://placedog.net/300/200?random=5" },
-            { "fact": "A dog's nose print is unique, much like a human's fingerprint.", "image": "https://placedog.net/300/200?random=6" },
-            { "fact": "The Labrador Retriever has been the most popular dog breed in the United States for over 30 years.", "image": "https://placedog.net/300/200?random=7" },
-            { "fact": "Dogs can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to 20,000 Hz.", "image": "https://placedog.net/300/200?random=8" },
-            { "fact": "The Greyhound is the fastest dog breed and can run up to 45 miles per hour.", "image": "https://placedog.net/300/200?random=9" },
-            { "fact": "Puppies are born blind, deaf, and toothless.", "image": "https://placedog.net/300/200?random=10" }
+            { "fact": "Dogs have been domesticated for over 14,000 years.", "image": "https://placedog.net/350/250?random=1" },
+            { "fact": "There are over 340 different dog breeds worldwide.", "image": "https://placedog.net/350/250?random=2" },
+            { "fact": "Dogs have a sense of smell that is 10,000 to 100,000 times more acute than humans.", "image": "https://placedog.net/350/250?random=3" },
+            { "fact": "The Basenji dog is known as the 'barkless dog' because it doesn't bark like other dogs.", "image": "https://placedog.net/350/250?random=4" },
+            { "fact": "Dogs have three eyelids, including one to keep their eyes moist and protected.", "image": "https://placedog.net/350/250?random=5" },
+            { "fact": "A dog's nose print is unique, much like a human's fingerprint.", "image": "https://placedog.net/350/250?random=6" },
+            { "fact": "The Labrador Retriever has been the most popular dog breed in the United States for over 30 years.", "image": "https://placedog.net/350/250?random=7" },
+            { "fact": "Dogs can hear sounds at frequencies as high as 65,000 Hz, while humans can only hear up to 20,000 Hz.", "image": "https://placedog.net/350/250?random=8" },
+            { "fact": "The Greyhound is the fastest dog breed and can run up to 45 miles per hour.", "image": "https://placedog.net/350/250?random=9" },
+            { "fact": "Puppies are born blind, deaf, and toothless.", "image": "https://placedog.net/350/250?random=10" }
         ];
 
         document.getElementById('factButton').addEventListener('click', () => {
