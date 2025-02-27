@@ -12,7 +12,7 @@ This project is a simple, interactive single-page website that displays random d
 
 ## How to Use
 
-1. **Open the HTML File**: Simply open the `index.html` file in any web browser.
+1. **Visit the following link**: https://da-rivindi.github.io/genai101/
 2. **Interact**: Click the "Show me a fact!" button to display a random dog fact.
 
 ## Code Structure
